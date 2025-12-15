@@ -24,6 +24,16 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
+app.MapControllerRoute(
+    name: "start",
+    pattern: "start",
+    defaults: new { controller = "Home", action = "Index" })
+    .WithStaticAssets();
 
+app.MapControllerRoute(
+    name: "test",
+    pattern: "test",
+    defaults: new { controller = "Student", action = "Info" })
+    .WithStaticAssets();
 
 app.Run();
